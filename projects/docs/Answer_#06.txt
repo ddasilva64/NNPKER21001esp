@@ -1,0 +1,114 @@
+## YO
+Corrige los modelos anteriores para que, cuando utilices redes neuronales, las capas internas utilicen funciones de activación ReLU y las de salida la función de activación sigmoide, por favor
+
+## Copilot
+Aquí tienes el código corregido para que las capas internas de las redes neuronales utilicen funciones de activación ReLU y las capas de salida utilicen la función de activación sigmoide:
+
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder, StandardScaler
+from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
+from sklearn.metrics import accuracy_score, mean_squared_error
+from keras.models import Sequential
+from keras.layers import Dense, Dropout
+from keras.callbacks import EarlyStopping
+
+# Función para preprocesar el dataset
+def preprocess_data(df, target_column, is_classification=True):
+    # Eliminar características superfluas
+    df = df.drop(columns=['Fecha', 'Hora'], errors='ignore')
+    
+    # Convertir características categóricas en numéricas
+    label_encoders = {}
+    for column in df.select_dtypes(include=['object']).columns:
+        le = LabelEncoder()
+        df[column] = le.fit_transform(df[column])
+        label_encoders[column] = le
+    
+    # Manejar outliers utilizando IQR
+    Q1 = df.quantile(0.25)
+    Q3 = df.quantile(0.75)
+    IQR = Q3 - Q1
+    outliers = ((df < (Q1 - 1.5 * IQR)) | (df > (Q3 + 1.5 * IQR)))
+    
+    for column in outliers.columns:
+        outlier_percentage = outliers[column].mean() * 100
+        if outlier_percentage > 20:
+            df = df.drop(columns=[column])
+        else:
+            median_value = df.loc[~outliers[column], column].median()
+            df.loc[outliers[column], column] = median_value
+    
+    # Dividir el dataset en características y etiqueta
+    X = df.drop(columns=[target_column])
+    y = df[target_column]
+    
+    # Estandarizar las características
+    scaler = StandardScaler()
+    X_scaled = scaler.fit_transform(X)
+    
+    return X_scaled, y, label_encoders
+
+# Función para entrenar y evaluar un modelo de Random Forest
+def train_random_forest(X_train, y_train, X_test, y_test, is_classification=True):
+    if is_classification:
+        model = RandomForestClassifier(n_estimators=100, random_state=42)
+        model.fit(X_train, y_train)
+        y_pred = model.predict(X_test)
+        accuracy = accuracy_score(y_test, y_pred)
+        print(f"Random Forest Accuracy: {accuracy}")
+    else:
+        model = RandomForestRegressor(n_estimators=100, random_state=42)
+        model.fit(X_train, y_train)
+        y_pred = model.predict(X_test)
+        mse = mean_squared_error(y_test, y_pred)
+        print(f"Random Forest MSE: {mse}")
+
+# Función para entrenar y evaluar un modelo de Red Neuronal
+def train_neural_network(X_train, y_train, X_test, y_test, is_classification=True):
+    model = Sequential()
+    model.add(Dense(64, input_dim=X_train.shape[1], activation='relu'))
+    model.add(Dropout(0.5))
+    model.add(Dense(32, activation='relu'))
+    model.add(Dropout(0.5))
+    
+    if is_classification:
+        model.add(Dense(1, activation='sigmoid'))
+        model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+        early_stopping = EarlyStopping(monitor='val_loss', patience=10)
+        history = model.fit(X_train, y_train, validation_split=0.2, epochs=100, batch_size=32, callbacks=[early_stopping])
+        loss, accuracy = model.evaluate(X_test, y_test)
+        print(f"Neural Network Accuracy: {accuracy}")
+    else:
+        model.add(Dense(1, activation='sigmoid'))
+        model.compile(loss='mean_squared_error', optimizer='adam')
+        early_stopping = EarlyStopping(monitor='val_loss', patience=10)
+        history = model.fit(X_train, y_train, validation_split=0.2, epochs=100, batch_size=32, callbacks=[early_stopping])
+        loss, mse = model.evaluate(X_test, y_test)
+        print(f"Neural Network MSE: {mse}")
+
+# Ejemplo de uso con un dataset de muestra (reemplazar con datasets reales)
+# Cargar el dataset (reemplazar 'dataset.csv' con el archivo real)
+df = pd.read_csv('dataset.csv')
+
+# Preprocesar los datos
+X_scaled, y, label_encoders = preprocess_data(df, target_column='target', is_classification=True)
+
+# Dividir los datos en conjuntos de entrenamiento y prueba
+X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, random_state=42)
+
+# Entrenar y evaluar el modelo de Random Forest
+train_random_forest(X_train, y_train, X_test, y_test)
+
+# Entrenar y evaluar el modelo de Red Neuronal
+train_neural_network(X_train, y_train, X_test, y_test)
+
+Explicación del Código- Preprocesamiento de Datos:
+    - Se eliminan características superfluas como Fecha y Hora.
+    - Se convierten características categóricas en numéricas utilizando LabelEncoder.
+    - Se manejan outliers utilizando el método IQR. Si el porcentaje de outliers es mayor al 20%, se elimina la característica; de lo contrario, se imputan los valores medios.
+- Entrenamiento y Evaluación de Modelos:
+    - Se entrena y evalúa un modelo de Random Forest para clasificación o regresión.
+    - Se entrena y evalúa un modelo de Red Neuronal utilizando Keras y TensorFlow, con funciones de activación ReLU en las capas internas y sigmoide en la capa de salida. Se utilizan técnicas para evitar el overfitting como Dropout y EarlyStopping.
+Este código es un punto de partida y puede ser ajustado según las necesidades específicas de tus datasets y objetivos. ¿Hay algo más en lo que pueda ayudarte?

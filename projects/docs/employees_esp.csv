@@ -1,0 +1,38 @@
+ID de empleado,Apellido 1 del empleado,Apellido 2 del empleado,Nombre del empleado,Edad,Género,Estado civil,Número de hijos,Número de hijos a su cargo,Número de personas mayores a su cargo,Número de personas discapacitadas a su cargo,¿Tiene vehículo propio?,¿Convive con su pareja?,¿Qué enfermedad crónica padece?,¿Qué enfermedad grave padece?,¿Qué minusvalía padece?,Puntualidad diária,Nivel máximo de estudios concluidos,Fecha de incorporación a la empresa,Número de años de experiencia en el almacén de la empresa,¿Carnet de toro?,¿Curso de seguridad e higiene en el trabajo concluido?,Otra formación laboral aplicable,Turno en el que ha sido contratado,Altura (en metros),Peso (en Kg),¿Usa gafas?,¿Usa audífonos?
+F7XUFA,Murillo,Benavent,Desiderio,21,Masculino,Casado/a,3,1,1,2,Sí,Sí,Diabetes,Ninguna,Auditiva,96%,Primaria,20170412,3.5,Sí,No,Mayordomo doméstico,D,1.89,59.7,No,No
+B5RHNB,Salas,Tomás,Rodolfo,19,Femenino,Viudo/a,5,4,1,2,Sí,No,Asma,Ninguna,Visual,97%,Primaria,20190824,7.4,No,No,Director de servicios de tecnología de la información y las comunicaciones,N,1.86,61.3,Sí,Sí
+T77OBA,Salinas,Palmer,Rosenda,23,Masculino,Casado/a,5,4,2,2,No,Sí,Diabetes,Ninguna,Visual,94%,Universidad,20150822,8.1,Sí,Sí,"Operador de máquinas de embalaje, embotellamiento y etiquetado ",D,1.78,72.1,Sí,Sí
+V4GT4I,Piñol,Cañellas,Dionisio,38,Masculino,Divorciado/a,0,0,2,2,Sí,Sí,Hipertensión,Cáncer,Motriz,99%,Secundaria,20230826,4.8,No,Sí,Operador de máquinas lavarropas,N,1.76,73.8,No,No
+MO3J9M,Reguera,Calderon,Prudencio,59,Femenino,Casado/a,0,0,1,1,No,Sí,Asma,Enfermedad cardíaca,Motriz,90%,Secundaria,20210428,1.9,No,Sí,Revisor y cobrador de los transportes públicos,N,1.94,62.7,No,No
+7CNCOS,Valls,Carpio,Pía,60,Masculino,Soltero/a,3,0,0,2,No,Sí,Hipertensión,Enfermedad cardíaca,Auditiva,97%,Primaria,20231217,6.9,Sí,Sí,Operador de instalaciones de tratamiento de agua,D,1.79,59.8,No,Sí
+70QCDL,Casal,Tomas,Guiomar,50,Femenino,Divorciado/a,0,0,0,0,Sí,No,Asma,Cáncer,Ninguna,98%,Primaria,20220804,1.4,Sí,Sí,Perforador y sondista de pozos,N,1.92,78.2,No,No
+RM3TNO,Rosales,Macias,Ana,52,Femenino,Viudo/a,4,0,1,1,No,Sí,Ninguna,Enfermedad cardíaca,Motriz,94%,Primaria,20200430,8.3,No,Sí,Operador de máquinas para fabricar productos de papel,N,1.86,85.2,Sí,No
+XKGKT5,Guillén,Vizcaíno,Luisina,61,Masculino,Casado/a,5,4,1,2,No,No,Diabetes,Ninguna,Motriz,95%,Universidad,20240717,6.3,Sí,Sí,Ingeniero de minas,N,1.63,72.7,No,No
+6GLAB3,Montalbán,Maestre,Anselma,56,Masculino,Viudo/a,4,0,0,2,No,No,Diabetes,Cáncer,Visual,90%,Bachillerato,20210512,4.7,No,Sí,Planchador manuales,N,1.82,95.7,No,Sí
+JCDZ5R,Aznar,Castellanos,Segismundo,46,Masculino,Divorciado/a,0,0,0,1,Sí,No,Ninguna,Enfermedad cardíaca,Ninguna,90%,Secundaria,20170419,4.7,No,Sí,Preparador y elaborador de tabaco y sus productos,N,1.9,98.4,No,No
+KFPUVU,Navas,Rosa,Valentín,36,Masculino,Soltero/a,2,2,0,1,No,Sí,Diabetes,Cáncer,Visual,94%,Primaria,20190106,3.5,Sí,Sí,Sericultor,D,1.76,94.5,No,Sí
+TAPJBI,Villaverde,Muro,Gema,55,Femenino,Viudo/a,4,4,1,2,Sí,Sí,Ninguna,Enfermedad cardíaca,Ninguna,92%,Bachillerato,20220613,8.7,Sí,Sí,Supervisor de tiendas y almacenes,D,1.85,95.1,Sí,No
+GEZU0O,Valle,Carbajo,Julie,21,Masculino,Viudo/a,1,0,1,2,Sí,Sí,Diabetes,Ninguna,Ninguna,94%,Bachillerato,20161123,2.9,No,Sí,Trabajador agrícola de subsistencia,N,1.88,51.6,Sí,No
+Y1CU18,Bauzà,Ayala,Manolo,47,Femenino,Viudo/a,3,2,0,1,Sí,Sí,Ninguna,Cáncer,Visual,95%,Secundaria,20170624,9.5,Sí,Sí,Operario del tratamiento de la madera,N,1.52,62.5,Sí,Sí
+DQB4QH,Granados,Pacheco,Roxana,28,Masculino,Viudo/a,5,3,2,2,No,Sí,Hipertensión,Cáncer,Ninguna,99%,Bachillerato,20211105,7.4,Sí,No,Instalador y reparador de líneas eléctricas,N,1.79,75.0,Sí,No
+PEWQ6L,Porta,Barriga,Ángeles,47,Masculino,Divorciado/a,3,2,2,1,No,Sí,Ninguna,Ninguna,Visual,98%,Bachillerato,20200316,7.1,No,No,Técnico de prótesis médicas y dentales,D,1.51,63.9,Sí,Sí
+97IUO9,Carrasco,Fábregas,Teresa,28,Masculino,Soltero/a,3,2,2,2,Sí,No,Diabetes,Ninguna,Auditiva,96%,Universidad,20150201,9.5,No,No,Operador de máquinas para elaborar alimentos y productos afines,D,1.82,65.7,Sí,Sí
+RPAGIG,Baena,Rios,Haroldo,34,Femenino,Casado/a,1,1,1,0,Sí,Sí,Asma,Ninguna,Visual,95%,Universidad,20170905,9.2,No,No,Peón de explotaciones ganaderas,D,1.88,87.3,Sí,Sí
+X07GVY,Bueno,Vilaplana,Tania,32,Femenino,Soltero/a,2,1,1,1,Sí,No,Ninguna,Ninguna,Motriz,94%,Bachillerato,20160227,8.9,No,No,Profesional de medicina alternativa,D,1.5,97.8,Sí,Sí
+6H7PC5,Rivero,Villena,Severiano,40,Femenino,Casado/a,1,1,2,1,Sí,No,Ninguna,Ninguna,Visual,92%,Bachillerato,20170622,3.5,No,Sí,Productor y trabajador calificado de explotaciones agropecuarias mixtas,D,1.86,60.2,Sí,No
+JVCGS3,Albero,Salom,María José,51,Masculino,Soltero/a,0,0,0,0,Sí,No,Diabetes,Ninguna,Visual,99%,Secundaria,20150114,1.2,Sí,No,Carpintero,N,1.59,65.2,Sí,Sí
+VVVD7L,Coll,Ibáñez,Cintia,31,Masculino,Soltero/a,1,1,1,1,No,Sí,Diabetes,Cáncer,Auditiva,92%,Primaria,20160327,0.4,No,No,Técnico de prótesis médicas y dentales,N,1.59,86.8,Sí,No
+SVRQ9U,Escudero,Sala,Isabel,47,Masculino,Casado/a,2,1,2,1,No,No,Asma,Ninguna,Motriz,93%,Universidad,20200415,2.0,Sí,Sí,Técnico en redes y sistemas de computadores,N,1.71,79.2,No,No
+PNQF1T,Domínguez,Bernal,Eusebia,26,Femenino,Viudo/a,1,0,0,2,No,Sí,Asma,Cáncer,Motriz,90%,Secundaria,20231203,8.6,Sí,No,Técnico agropecuario,N,1.53,77.8,No,Sí
+U06SRY,Valverde,Ramis,Yaiza,51,Masculino,Soltero/a,5,5,2,1,No,Sí,Asma,Ninguna,Motriz,91%,Universidad,20190413,6.9,Sí,No,Reponedor de estanterías,N,1.86,76.0,Sí,No
+J04UBC,Chamorro,Salcedo,Leocadio,19,Femenino,Casado/a,3,1,0,1,No,Sí,Diabetes,Enfermedad cardíaca,Ninguna,99%,Primaria,20190112,1.4,No,No,Dibujante técnico,D,1.66,86.3,No,No
+HFLNXA,Vicente,Llobet,Maxi,35,Masculino,Casado/a,5,1,1,2,No,No,Hipertensión,Enfermedad cardíaca,Visual,95%,Secundaria,20210516,0.6,Sí,No,Guardián de prisión,N,1.63,98.9,No,Sí
+UAF0TB,Pardo,Sastre,Javi,63,Femenino,Divorciado/a,0,0,2,2,No,No,Asma,Ninguna,Visual,96%,Primaria,20230214,0.2,No,No,Modisto,D,1.76,86.9,Sí,No
+42J1JQ,Hernando,Olmo,Jennifer,57,Femenino,Casado/a,4,4,1,0,No,Sí,Asma,Enfermedad cardíaca,Ninguna,95%,Primaria,20190727,9.1,Sí,Sí,Catador de bebidas,N,1.62,50.8,Sí,Sí
+VZBV8Q,Bustamante,Amores,Amor,31,Masculino,Soltero/a,4,4,2,2,No,Sí,Ninguna,Enfermedad cardíaca,Ninguna,100%,Primaria,20160821,3.9,No,Sí,Dentista,N,1.66,60.5,Sí,Sí
+OWIMHI,Ródenas,Vilaplana,Cándida,38,Femenino,Casado/a,2,1,1,1,No,Sí,Ninguna,Enfermedad cardíaca,Motriz,99%,Primaria,20231010,0.2,No,No,Encuadernador,N,1.59,76.2,Sí,Sí
+C83Q37,Casanova,Córdoba,Tiburcio,19,Femenino,Soltero/a,3,0,0,1,Sí,Sí,Ninguna,Enfermedad cardíaca,Motriz,94%,Secundaria,20190523,3.4,No,Sí,Director de teatro,N,1.7,87.3,Sí,Sí
+G8WXHI,Puente,Casas,Maximino,52,Femenino,Casado/a,3,1,0,2,Sí,Sí,Ninguna,Ninguna,Ninguna,100%,Bachillerato,20160728,2.4,No,No,Albañil,N,1.7,94.7,No,No
+JZ2YU1,Santamaría,Sosa,Conrado,54,Femenino,Soltero/a,5,5,1,2,Sí,Sí,Ninguna,Ninguna,Auditiva,94%,Universidad,20150130,3.4,No,No,Platero,D,1.66,90.2,No,Sí
+9JSEWT,Sastre,Peñas,Hipólito,31,Masculino,Viudo/a,2,2,1,2,Sí,No,Asma,Enfermedad cardíaca,Motriz,90%,Universidad,20170502,4.2,No,Sí,Zoólogo,N,1.65,90.5,Sí,No
+H9BEKQ,Coll,Machado,Gregorio,51,Masculino,Divorciado/a,1,0,1,1,Sí,No,Ninguna,Cáncer,Ninguna,96%,Primaria,20190301,9.5,Sí,Sí,Técnico en aparatos de diagnóstico y tratamiento médico,N,1.69,62.6,No,Sí

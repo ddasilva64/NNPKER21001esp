@@ -1,0 +1,32 @@
+Genera un dataset que contenga una plantilla de 37 empleados de almacén, formada por hombres y mujeres de diferentes edades. Esta plantilla de almacén está formada por ciudadanos estadounidenses del estado de Colorado (Estados Unidos). Este dataset debe tener los siguientes campos:
+
+1. ID de emleado: código alfanumérico de 6 dígitos
+2. Apellido 1 del empleado
+3. Apellido 2 del empleado
+4. Nombre del empleado
+5. Edad: número entero
+6. Género: alfanumérico
+7. Estado civil: alfanumérico
+8. Número de hijos:
+9. Número de hijos a su cargo
+10. Número de personas mayores a su cargo
+11. Número de personas discapacitadas a su cargo
+12. ¿Tiene vehículo propio?
+13. ¿Convive con su pareja?
+14. ¿Qué enfermedad crónica padece ?
+15. ¿Qué enfermedad grave padece ?
+16. ¿Qué minusvalía padece ?
+17. Puntualidad diária
+18. Nivel máximo de estudios concluidos
+19. Fecha de incorporación a la empresa: en formato YYYYMMDD
+20. Número de años de experiencia en el almacén de la empresa: formato decimal 
+21. ¿Carnet de toro?
+22. ¿Curso de seguridad e higiene en el trabajo concluido?
+23. Otra formación laboral aplicable: especificar
+24. Turno en el que ha sido contratado: "D"=dia, "N"=nocturno
+25. Altura (en metros): decimal 
+26: Peso (en Kg): decimal
+27. ¿Usa gafas?
+22. ¿Usa audífonos?
+
+El dataset y el nombre de los campos genéralos en español, catalán e inglés, los tres en formato CSV, por favor.

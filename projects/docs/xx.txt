@@ -1,0 +1,42 @@
+Descripción del proyecto
+Este proyecto WEMPRO01 (Warehouse Employee Management PROject 01), tiene como objetivo controlar la productividad de la fuerza laboral de los empleados de un almacén logístico, con IA, antes y después de la jornada laboral.
+
+Objetivos
+Para ello, se sigue el siguiente esquema:
+
+Antes de la jornada laboral
+1.1. Planificación de tareas: Utilizar algoritmos de IA para asignar tareas diarias en función de la carga de trabajo, las habilidades de los empleados y las prioridades del almacén.
+1.2. Optimización de rutas: Implementar sistemas de IA que optimicen las rutas dentro del almacén para minimizar el tiempo de viaje y maximizar la eficiencia.
+1.3. Análisis predictivo: Utilizar IA para predecir los picos de demanda y ajustar la planificación del personal en consecuencia.
+1.4. Capacitación personalizada: Utilizar IA para identificar áreas de mejora en las habilidades de los empleados y brindar capacitación personalizada antes de que comience la jornada laboral.
+
+Durante la jornada laboral
+2.1. Monitoreo en tiempo real: Utilizar sensores y cámaras conectadas a sistemas de IA para monitorear el rendimiento y la seguridad en tiempo real.
+2.2. Asistentes virtuales: Implementar asistentes virtuales que puedan brindar soporte inmediato a los empleados, respondiendo preguntas y resolviendo problemas rápidamente.
+2.3. Análisis de datos: Recopilar y analizar datos en tiempo real para identificar cuellos de botella y áreas de mejora.
+
+Después de la jornada laboral
+3.1. Evaluación del desempeño: Utilizar IA para analizar el desempeño diario de cada empleado y proporcionar retroalimentación detallada.
+3.2. Informes automatizados: Generar informes automáticos que resuman la productividad del día y resalten las áreas de mejora.
+3.3. Mantenimiento predictivo: Utilizar IA para predecir y planificar el mantenimiento de equipos y maquinaria, asegurando que todo esté en óptimas condiciones para la siguiente jornada laboral.
+3.4. Análisis de tendencias: Utilizar IA para analizar tendencias a largo plazo en productividad y realizar ajustes estratégicos en la gestión del almacén.
+
+Como puedes ver, en este proyecto (01), nos ocuparemos de las tareas 1.1, 1.3, 1.4, 3.1, 3.2 y 3.4. Para ello, utilizaremos técnicas de Bosque aleatorio y Redes neuronales.
+
+Descripción de la fuente de datos
+El conjunto de datos se creó utilizando un asistente de IA (Copilot), aunque nos basamos en nuestra experiencia.
+
+Entra en storytelling para conocer a nuestro cliente y a nosotros.
+
+Todos los días, de lunes a viernes, hay 2 turnos. Los turnos A y B trabajan 11 horas y cuarto (día), el turno N trabaja 7 horas (noche).
+
+A y B trabajan en días alternos. N trabaja todos los días.
+
+El horario de A y B es el mismo:
+
+De 8 a 10 trabajan en el almacén
+A las 10 los empleados hacen un descanso para desayunar de media hora.
+A las 10:30 siguen trabajando hasta las 15:00.
+Hacen un descanso para comer de 15:00 a 16:00
+Después trabajan hasta las 18:00. Luego, hacen un descanso de 15 minutos
+De 18:15 a 21:00 siguen trabajando

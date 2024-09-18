@@ -1,0 +1,84 @@
+Tengo un dataset de empleados de almacén. Mi almacén tiene 5 tipos de tareas diferentes y trabajan dos turnos diários de 8 h (A y B), uno por la mañana y otro por la tarde. Los empleados se identifican por un ID de empleado y tienen un turno asignado. 
+De cada empleado queda reflejado, diáriamente, el número de acciones por minuto (pickings, reposiones, etc.) y cómo se distribuyen las acciones, por tipo de tarea (en número). El número de enpleados de cada turno es de 20.
+
+Las características de los empleados son:
+- ID
+- Nombre
+- Apellido 1
+- Apellido 2
+- Edad
+- Estado civil
+- Número de hijos a su cargo
+- Familiares trabajando en la empresa (1=sí, 0=no)
+- Género
+- Habilidades (carnet de toro, sabe hacer picking, saber reponer)
+- Altura (en metros)
+- Peso (en Kg)
+- IMC (índice de masa corporal) en número.
+- IMC (índice de masa corporal) en categoría (deldadez, sobrepero, obesidad)
+- Padecer alguna enfermedad o minusvalía
+
+Construye un modelo de IA que:
+1. Me clasifique los empleados según su productividad.
+2. Me prediga como va a funcionar un turno, ante una carga de trabajo, con antelación.
+3. Me compare capacidad productiva de turnos.
+4. Me construya un ránquing general de empleados más productivos y distinga 3 categorías: excelentes, buenos y resto.
+5. Me construya el anterior ránquing de empleados más productivos, dentro de cada turno.
+6. Me destaque los empleados que son más versátiles, es decir, que pueden trabajar en más tipos de tareas, la misma jornada. A esta versatilidad, se la llamará polivalencia.
+7. El sistema debe proponer una plantilla diária que maximice la productividad, sabiendo la carga de trabajo (antes de comenzar la jornada).
+8. El sistema debe mostrar una clasificación de los empleados diária, al terminar la jornada, en función de su productividad.
+
+Quiero estrategias, en mi modelo, para tratar los posibles outliers y el posoble overfitting.
+
+Genera, además, para lo anterior, un dataset de training y otro de test, ambos en formato CSV. En estos dos datasets debe aparecer la fecha en formato YYYYMMDD. 
+
+El dataset de entrenamiento debe contener todos los días laborables en Cataluña del 2022, 2023 y 2024 hasta el 31 de agosto. 
+
+El dataset de prueba debe debe contener todos los días laborables en Cataluña del 1 de septiembre de 2024 al 31 de diciembre de 2024.
+
+Genera aleatoriamente nombres y apellidos catalanes y españoles.
+
+La edad de los empleados debe ir de 18 a 65 años.
+
+La altura de las mujeres debe ir de 1.20 metros a 1.70 metros y su peso de 40.00 Kg a 90.00 Kg.
+
+La altura de los hombres debe ir de 1.60 metros a 1.90 metros y su peso de 60.00 Kg a 110.00 Kg.
+
+El IMC se define como el peso en Kg dividido por la altura, al cuadrado, en metros.
+
+La categoría del IMC se clasifica como: Si su IMC es entre 18,5 y 24,9, se encuentra dentro del rango de peso normal o saludable. Si su IMC es entre 25,0 y 29,9, se encuentra dentro del rango de sobrepeso. Si su IMC es 30,0 o superior, se encuentra dentro del rango de obesidad.
+
+La estructura de los datasets debe ser la siguiente:
+- Fecha (en formato YYYYMMDD)
+- ID empleado (4 dígitos alfanumérico)
+- ID turno (A o B)
+- Nombre
+- Apellido 1
+- Apellido 2
+- Edad (años)
+- Estado civil
+- Número de hijos a su cargo
+- Familiares trabajando en la empresa (1=sí, 0=no)
+- Género
+- Carnet de toro (1=sí, 0=no)
+- Sabe hacer picking (1=sí, 0=no)
+- Sabe reponer (1=sí, 0=no)
+- Altura (en metros)
+- Peso (en Kg)
+- IMC (índice de masa corporal) en número.
+- IMC (índice de masa corporal) en categoría (deldadez, sobrepero, obesidad)
+- Padece alguna enfermedad (1=sí, 0=no)
+- Padece alguna minusvalía (1=sí, 0=no)
+- Acciones de tipo tarea 1
+- Acciones por minuto de tipo tarea 1
+- Acciones de tipo tarea 2
+- Acciones por minuto de tipo tarea 2
+- Acciones de tipo tarea 3
+- Acciones por minuto de tipo tarea 3
+- Acciones de tipo tarea 4
+- Acciones por minuto de tipo tarea 4
+- Acciones de tipo tarea 5
+- Acciones por minuto de tipo tarea 5
+
+Construye un programa Python para generar estos dos datasets, pero, además, genera los ficheros (en formato CSV), para que yo los pueda descargar ahora.
+

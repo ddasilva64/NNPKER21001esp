@@ -1,0 +1,38 @@
+ID, LastName1, LastName2, FirstName, Age, Gender, MaritalStatus, NumberOfChildren, NumberOfChildrenInCare, NumberOfElderlyInCare, NumberOfDisabledInCare, OwnsVehicle, LivesWithPartner, ChronicDisease, SeriousIllness, Disability, DailyPunctuality, HighestEducationLevel, DateOfJoining, YearsOfExperience, ForkliftLicense, SafetyAndHygieneCourse, OtherApplicableTraining, Shift, Height, Weight, WearsGlasses, WearsHearingAid
+A12345, Smith, Johnson, John, 34, M, Married, 2, 2, 0, 0, Yes, Yes, Hypertension, None, None, 9, Bachelor's, 20200115, 5.5, Yes, Yes, First Aid, D, 1.75, 80, No, No
+B23456, Brown, Davis, Emily, 29, F, Single, 1, 1, 0, 0, No, No, Asthma, None, None, 8, High School, 20190320, 3.2, No, Yes, Forklift Operation, N, 1.65, 60, Yes, No
+C34567, Wilson, Martinez, Michael, 42, M, Divorced, 3, 1, 1, 0, Yes, No, Diabetes, None, None, 7, Associate's, 20180510, 7.0, Yes, Yes, Warehouse Management, D, 1.80, 85, No, Yes
+D45678, Garcia, Hernandez, Sarah, 37, F, Married, 2, 2, 0, 0, Yes, Yes, None, None, None, 9, Bachelor's, 20170125, 6.3, Yes, Yes, Safety Training, N, 1.70, 65, Yes, No
+E56789, Martinez, Lopez, David, 45, M, Widowed, 4, 2, 1, 0, No, No, Hypertension, None, None, 8, High School, 20160515, 10.0, No, Yes, Heavy Machinery, D, 1.78, 90, No, No
+F67890, Anderson, Gonzalez, Jessica, 31, F, Single, 0, 0, 0, 0, Yes, No, None, None, None, 9, Bachelor's, 20210301, 2.5, Yes, Yes, Logistics, N, 1.68, 58, Yes, No
+G78901, Thomas, Wilson, Robert, 28, M, Married, 1, 1, 0, 0, Yes, Yes, Asthma, None, None, 8, High School, 20200715, 4.0, Yes, Yes, Inventory Management, D, 1.82, 75, No, No
+H89012, Taylor, Moore, Laura, 39, F, Divorced, 3, 2, 0, 0, No, No, Diabetes, None, None, 7, Associate's, 20180420, 7.5, No, Yes, Safety Training, N, 1.72, 70, Yes, Yes
+I90123, Lee, Jackson, James, 33, M, Single, 0, 0, 0, 0, Yes, No, None, None, None, 9, Bachelor's, 20200210, 5.0, Yes, Yes, Forklift Operation, D, 1.76, 78, No, No
+J01234, White, Martin, Emma, 27, F, Married, 1, 1, 0, 0, Yes, Yes, None, None, None, 8, High School, 20210505, 3.0, No, Yes, First Aid, N, 1.64, 55, Yes, No
+K12345, Harris, Clark, William, 36, M, Married, 2, 2, 0, 0, Yes, Yes, Hypertension, None, None, 9, Bachelor's, 20190215, 4.5, Yes, Yes, First Aid, D, 1.77, 82, No, No
+L23456, Lewis, Rodriguez, Olivia, 30, F, Single, 1, 1, 0, 0, No, No, Asthma, None, None, 8, High School, 20190420, 3.4, No, Yes, Forklift Operation, N, 1.66, 62, Yes, No
+M34567, Walker, Lewis, Benjamin, 41, M, Divorced, 3, 1, 1, 0, Yes, No, Diabetes, None, None, 7, Associate's, 20180610, 7.2, Yes, Yes, Warehouse Management, D, 1.81, 87, No, Yes
+N45678, Hall, Young, Sophia, 38, F, Married, 2, 2, 0, 0, Yes, Yes, None, None, None, 9, Bachelor's, 20170225, 6.5, Yes, Yes, Safety Training, N, 1.69, 67, Yes, No
+O56789, Allen, King, Daniel, 46, M, Widowed, 4, 2, 1, 0, No, No, Hypertension, None, None, 8, High School, 20160615, 10.2, No, Yes, Heavy Machinery, D, 1.79, 92, No, No
+P67890, Scott, Wright, Isabella, 32, F, Single, 0, 0, 0, 0, Yes, No, None, None, None, 9, Bachelor's, 20210401, 2.7, Yes, Yes, Logistics, N, 1.67, 59, Yes, No
+Q78901, Green, Hill, Matthew, 29, M, Married, 1, 1, 0, 0, Yes, Yes, Asthma, None, None, 8, High School, 20200815, 4.2, Yes, Yes, Inventory Management, D, 1.83, 77, No, No
+R89012, Adams, Scott, Mia, 40, F, Divorced, 3, 2, 0, 0, No, No, Diabetes, None, None, 7, Associate's, 20180520, 7.7, No, Yes, Safety Training, N, 1.73, 72, Yes, Yes
+S90123, Baker, Green, Joshua, 34, M, Single, 0, 0, 0, 0, Yes, No, None, None, None, 9, Bachelor's, 20200310, 5.2, Yes, Yes, Forklift Operation, D, 1.77, 80, No, No
+T01234, Gonzalez, Adams, Ava, 28, F, Married, 1, 1, 0, 0, Yes, Yes, None, None, None, 8, High School, 20210605, 3.2, No, Yes, First Aid, N, 1.65, 56, Yes, No
+U12345, Nelson, Baker, Christopher, 37, M, Married, 2, 2, 0, 0, Yes, Yes, Hypertension, None, None, 9, Bachelor's, 20190315, 4.7, Yes, Yes, First Aid, D, 1.78, 83, No, No
+V23456, Carter, Nelson, Abigail, 31, F, Single, 1, 1, 0, 0, No, No, Asthma, None, None, 8, High School, 20190520, 3.5, No, Yes, Forklift Operation, N, 1.67, 61, Yes, No
+W34567, Mitchell, Carter, Alexander, 42, M, Divorced, 3, 1, 1, 0, Yes, No, Diabetes, None, None, 7, Associate's, 20180710, 7.4, Yes, Yes, Warehouse Management, D, 1.82, 88, No, Yes
+X45678, Perez, Mitchell, Charlotte, 39, F, Married, 2, 2, 0, 0, Yes, Yes, None, None, None, 9, Bachelor's, 20170325, 6.7, Yes, Yes, Safety Training, N, 1.71, 68, Yes, No
+Y56789, Roberts, Perez, Joseph, 47, M, Widowed, 4, 2, 1, 0, No, No, Hypertension, None, None, 8, High School, 20160715, 10.4, No, Yes, Heavy Machinery, D, 1.80, 93, No, No
+Z67890, Turner, Roberts, Amelia, 33, F, Single, 0, 0, 0, 0, Yes, No, None, None, None, 9, Bachelor's, 20210501, 2.9, Yes, Yes, Logistics, N, 1.69, 60, Yes, No
+A78901, Phillips, Turner, Ethan, 30, M, Married, 1, 1, 0, 0, Yes, Yes, Asthma, None, None, 8, High School, 20200915, 4.4, Yes, Yes, Inventory Management, D, 1.84, 78, No, No
+B89012, Campbell, Phillips, Grace, 41, F, Divorced, 3, 2, 0, 0, No, No, Diabetes, None, None, 7, Associate's, 20180620, 7.9, No, Yes, Safety Training, N, 1.74, 73, Yes, Yes
+C90123, Parker, Campbell, Logan, 35, M, Single, 0, 0, 0, 0, Yes, No, None, None, None, 9, Bachelor's, 20200410, 5.4, Yes, Yes, Forklift Operation, D, 1.78, 81, No, No
+D01234, Evans, Parker, Zoe, 29, F, Married, 1, 1, 0, 0, Yes, Yes, None, None, None, 8, High School, 20210705, 3.4, No, Yes, First Aid, N, 1.66, 57, Yes, No
+E12345, Edwards, Evans, Mason, 38, M, Married, 2, 2, 0, 0, Yes, Yes, Hypertension, None, None, 9, Bachelor's, 20190415, 4.9, Yes, Yes, First Aid, D, 1.79, 84, No, No
+F23456, Collins, Edwards, Lily, 32, F, Single, 1, 1, 0, 0, No, No, Asthma, None, None, 8, High School, 20190620, 3.7, No, Yes, Forklift Operation, N, 1.68, 63, Yes, No
+G34567, Stewart, Collins, Lucas, 43, M, Divorced, 3, 1, 1, 0, Yes, No, Diabetes, None, None, 7, Associate's, 20180810, 7.6, Yes, Yes, Warehouse Management, D, 1.83, 89, No, Yes
+H45678, Sanchez, Stewart, Ella, 40, F, Married, 2, 2, 0, 0, Yes, Yes, None, None, None, 9, Bachelor's, 20170425, 6.9, Yes, Yes, Safety Training, N, 1.72, 69, Yes, No
+I56789, Morris, Sanchez, Henry, 48, M, Widowed, 4, 2, 1, 0, No, No, Hypertension, None, None, 8, High School, 20160815, 10.6, No, Yes, Heavy Machinery, D, 1.81, 94, No, No
+J67890, Morris, Sanchez, Henry, 48, M, Widowed, 4, 2, 1, 0, No, No, Hypertension, None, None, 8, High School, 20160815, 10.6, No, Yes, Heavy Machinery, D, 1.81, 94, No, No
+K78901, Rivera, Cooper, Chloe, 35, F, Single, 0, 0, 0, 0, Yes, No, None, None, None, 9, Bachelor's, 20210610, 3.1, Yes, Yes, Logistics, N, 1.70, 64, Yes, No
