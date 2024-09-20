@@ -17,20 +17,3 @@ Para construir el modelo de IA que cumpla con tus requisitos, aquí tienes algun
 Estrategias para tratar outliers y overfitting- Outliers: Utiliza técnicas como el Isolation Forest o el Z-Score para detectar y manejar outliers.
 - Overfitting: Implementa técnicas de regularización como L2 regularization y utiliza validación cruzada para evaluar el modelo.
 Si necesitas más detalles o ayuda con la implementación de estos modelos, ¡no dudes en decírmelo!
-
-
-
-Una red neuronal recurrente (RNN) es un tipo de red neuronal artificial que utiliza datos secuenciales o datos de series de tiempo. 
-Estos algoritmos de aprendizaje profundo se utilizan comúnmente para problemas ordinales o temporales, como la traducción de idiomas, el reconocimiento de voz y subtítulos de imágenes.
-
-
-¿Qué es LSTM (Long Short-Term Memory)? Tipo de red neuronal recurrente especializada en procesar secuencias de datos, como texto o series temporales, que es capaz de retener y utilizar información relevante a largo plazo.
-
-
-ANÁLISIS DE LA VARIANZA CON UN FACTOR (ANOVA) El análisis de la varianza permite contrastar la hipótesis nula de que las medias de K poblaciones (K >2) son iguales, frente a la hipótesis alternativa de que por lo menos una de las poblaciones difiere de las demás en cuanto a su valor esperado.
-
-
-K-means es un algoritmo de clasificación no supervisada (clusterización) que agrupa objetos en k grupos basándose en sus características. El agrupamiento se realiza minimizando la suma de distancias entre cada objeto y el centroide de su grupo o cluster.
-
-
-En esencia, un algoritmo genético es una técnica de resolución de problemas que utiliza operaciones genéticas como selección, cruce y mutación para generar una población de soluciones candidatas y evolucionarlas a lo largo del tiempo para encontrar una solución óptima.

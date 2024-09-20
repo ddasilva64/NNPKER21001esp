@@ -55,7 +55,6 @@
   * [***Fases***](#fases) 
 
 * [***Playground - Tensorflow***](#playground---tensorflow)  
-* [***Problema del desvanecimiento del gradiente (vanishing gradient problem)***](#problema-del-desvanecimiento-del-gradiente-vanishing-gradient-problem)
 
 </details>
 
@@ -956,36 +955,36 @@ Gracias al método de ***backpropagation*** las redes neuronales son capaces de 
 
 ### Fases
 
-El entrenamiento de las redes neuronales es un proceso complejo que implica distintas etapas. El método de ***backpropagation*** es la cuarta etapa del proceso y, al mismo tiempo se compone de distintas fases:
+El entrenamiento de las redes neuronales es un proceso complejo que implica distintas etapas. El método de backpropagation es la cuarta etapa del proceso y, al mismo tiempo se compone de distintas fases:
 
-1. ***Elección de la entrada y de la salida***: Este es el primer paso en el funcionamiento del algoritmo y es el momento en el que se determina una entrada para todo el proceso de ***retropropagación***, desde el punto de entrada hasta la salida deseada.
+- ***Elección de la entrada y de la salida***: Este es el primer paso en el funcionamiento del algoritmo y es el momento en el que se determina una entrada para todo el proceso de retropropagación, desde el punto de entrada hasta la salida deseada.
 
-2. ***Configuración***: Una vez configurados los valores de entrada y de salida, el algoritmo procede a asignar una serie de valores secundarios que le permiten modificar parámetros dentro de cada capa y nodo que conforman la red neuronal.
+- ***Configuración***: Una vez configurados los valores de entrada y de salida, el algoritmo procede a asignar una serie de valores secundarios que le permiten modificar parámetros dentro de cada capa y nodo que conforman la red neuronal.
 
-3. ***Cálculo de error***: En este paso se determina el error total, a partir del análisis de los nodos y capas de red neuronal.  
+- ***Cálculo de error***: En este paso se determina el error total, a partir del análisis de los nodos y capas de red neuronal.  
 
-4. ***Minimización de errores***: Una vez detectados los errores, el algoritmo procede a minimizar su efecto en el conjunto de la red neuronal.
+- ***Minimización de errores***: Una vez detectados los errores, el algoritmo procede a minimizar su efecto en el conjunto de la red neuronal.
 
-5. ***Actualización de parámetros***: Si la tasa de error es muy alta, el método de ***bakcpropagation***, ajusta y actualiza los parámetros para reducirla lo máximo posible.
+- ***Actualización de parámetros***: Si la tasa de error es muy alta, el método de bakcpropagation, ajusta y actualiza los parámetros para reducirla lo máximo posible.
 
-6. ***Modelado para la predicción***: Tras la optimización de los errores, el método de cálculo de ***backpropagation***, evalúa las entradas de prueba adecuadas para garantizar que se obtienen el resultado deseado.
+- ***Modelado para la predicción***: Tras la optimización de los errores, el método de cálculo de backpropagation, evalúa las entradas de prueba adecuadas para garantizar que se obtienen el resultado deseado.
 
 ![Backpropagation][i022a]
 
-Para llegar a obtener la predicción, las salidas de las capas anteriores, en una red, funcionan como las entradas de la siguiente capa y así hasta llegar a la última capa, que será la encargada de dar la predicción final.
+Hasta este momento entendemos que para llegar a obtener la predicción, las salidas de las capas anteriores, en una red, funcionan como las entradas de la siguiente capa y así hasta llegar a la última capa, que será la encargada de dar la predicción final.
 
-![Animación backpropagation con MNIST][i022b]
+[Animación backpropagation con MNIST][i022b]
 
-Sin embargo, el error calculado por la ***cost function*** (función de coste), viene dado únicamente por la respuesta de la última capa y una vez que se tiene este error, la última capa puede argumentar que ella no ha tenido la culpa, sino que el error viene de la capa anterior y así sucesivamente. 
+Sin embargo, el error calculado por la ***cost function*** (función de coste), viene dado únicamente por la respuesta de la última capa y una vez que se tiene este error, la última capa puede argumentar que ella no tuvo la culpa, sino que el error viene de la capa anterior y así sucesivamente. 
 
-Entonces, haciendo uso de derivadas parciales, podemos ir hacia atrás, capa a capa, distribuyendo los cambios necesarios para ir disminuyendo el error y esto es en sí la forma más fácil de entender la ***backpropagation***.
+Entonces, haciendo uso de derivadas parciales, podemos ir hacia atrás, capa a capa, distribuyendo los cambios necesarios para ir disminuyendo el error, esto es en sí la forma más fácil de entender la ***backpropagation***.
 
 ## Playground - Tensorflow
 
 ***Tensorflow*** nos ofrece una ***herramienta sumamente útil*** que nos provee de un entorno gráfico para probar conceptos de redes neuronales en problemas de ***clasificación y regresión***: [Playground](https://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=1&seed=0.87931&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false)
 
 
-![Playground - Tensorflow][i023a]
+![Backpropagation][i023a]
 
 **Playground - Tensorflow**
 
@@ -997,13 +996,13 @@ Nos permite tener acceso de forma simple e inmediata a los siguientes parámetro
 - Regularization rate
 - Problem type
 
-A la izquierda de la pantalla podemos seleccionar la distribución de datos, así como la cantidad de datos utilizada para entrenar y evaluar al modelo.
+En la izquierda de la pantalla podemos seleccionar la distribución de datos, así como la cantidad de datos utilizada para entrenar y evaluar al modelo.
 
 En el centro de la pantalla obtenemos la arquitectura de la red, podemos configurar las entradas de datos que deseamos, la cantidad de capas ocultas y la cantidad de neuronas en cada capa.
 
-A la derecha de la pantalla obtenemos el test loss y un gráfico que representa la clasificación de la red.
+En la derecha de la pantalla obtenemos el test loss y un gráfico que representa la clasificación de la red.
 
-## Problema del desvanecimiento del gradiente (vanishing gradient problem)  
+***Problema del desvanecimiento del gradiente (vanishing gradient problem)***  
 
 En ***ML***, el problema de desvanecimiento de gradiente es una dificultad encontrada al entrenar redes neuronales artificiales mediante métodos de aprendizaje basados en descenso estocástico de gradientes y de ***retropropagación***. En tales métodos, cada uno de los pesos de la red neuronal recibe una actualización proporcional a la derivada parcial de la función de error con respecto al peso actual en cada iteración de entrenamiento.
 
