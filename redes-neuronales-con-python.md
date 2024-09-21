@@ -19,11 +19,11 @@
   * [***Backpropagation***](#backpropagation)
   * [***Gradient descent***](#gradient-descent)
 
-* [***Entrenamiento y análisis de resultados de tu red neuronal***](#entrenamiento-y-análisis-de-resultados-de-tu-red-neuronal)
+* [***Entrenamiento y análisis de resultados de la RNA***](#entrenamiento-y-análisis-de-resultados-de-la-rna)
   * [***Train model function***](#train-model-function)
-  * [***Definir arquitectura de la red***](#definir-arquitectura-de-la-red)
+  * [***Definir arquitectura de la RNA***](#definir-arquitectura-de-la-rna)
   * [***Entrenamiento del modelo***](#entrenamiento-del-modelo)
-  * [***Probando el modelo sobre datos nuevos***](#probando-el-modelo-sobre-datos-nuevos)
+  * [***Probando el modelo con datos nuevos***](#probando-el-modelo-con-datos-nuevos)
 
 </details>
 
@@ -339,7 +339,7 @@ Definición de variables:
 - $Z_{i}$: Parte lineal del proceso de la ***RNA*** np.dot($X$, $W$) + $b$ de la i-ésima capa.
 - $A_{i}$: Función de activación aplicada a $Z$ de la i-ésima capa.
 - $y\_hat$: Predicción final de la ***RNA***, correspondiente a $A$ de la última capa.
-- $d\{variable\}_{i}$: Representa la derivada de cierta variable. Por ejemplo, d$W_{3}$ corresponde a la derivada de los pesos de la capa 3.
+- $d(variable)_{i}$: Representa la derivada de cierta variable. Por ejemplo, $dW_{3}$ corresponde a la derivada de los pesos de la capa 3.
 
 Programamos un paso de nuestra función de forward propagation:
 
@@ -392,7 +392,7 @@ def backpropagation(Y, y_hat, params, activations_functions, error_function, n_l
 
 ### Gradient descent
 
-El último paso es ya con las derivadas calculadas podemos actualizar los pesos Wi y los bias bi de cada capa utilizando las derivadas calculadas en el punto anterior y un learning rate lr.
+El último paso es,con las derivadas ya calculadas, actualizar los pesos $W_{i}$ y los bias $b_{i}$ de cada capa, utilizando las derivadas calculadas en el punto anterior y un ***learning rate*** (lr).
 
 ```python
 def gradient_descent(params, lr, n_layers):
@@ -405,12 +405,11 @@ def gradient_descent(params, lr, n_layers):
     return params
 ```
 
-
-## Entrenamiento y análisis de resultados de tu red neuronal
+## Entrenamiento y análisis de resultados de la RNA
 
 ### Train model function
 
-Ahora con todas las funciones que hemos definido anteriormente podemos crear una nueva función que sirva como orquestador de funciones y permita poner de forma secuencial todos los pasos de entrenamiento de la red para una cantidad de iteraciones `epochs` definida:
+Ahora, con todas las funciones que hemos definido anteriormente, podemos crear una nueva función que sirva como gestora de funciones y que permita poner, de forma secuencial, todos los pasos del entrenamiento de la red, para una cantidad de iteraciones definidas (`epochs`):
 
 ```python
 def train_model(X, Y, layer_dims, params, activations_functions, error_function, lr, epochs):
@@ -432,9 +431,15 @@ def train_model(X, Y, layer_dims, params, activations_functions, error_function,
     return errors, params
 ```
 
-### Definir arquitectura de la red
+### Definir arquitectura de la RNA
 
-En este punto podemos definir todas las variables que orquestan a la arquitectura de la red como: el número de capas y número de neuronas para capa. El learning rate. Las funciones de activaciones para cada capa oculta. La cantidad de epochs.
+En este punto, definimos todas las variables que definen la arquitectura de la red como: 
+- El número de capas  
+- El número de neuronas por capa  
+- El learning rate  
+- Las funciones de activaciones en cada capa oculta  
+- La cantidad de epochs  
+
 
 ```python
 layer_dims = [2, 4, 8, 1]
@@ -443,7 +448,8 @@ activations_functions = [0, relu, relu, sigmoid]
 params = initialize_parameters_deep(layer_dims)
 epochs = 10000
 ```
-Repuesta esperada:
+
+Retorno:
 ```commandline
 Inicializando PESO W1 con dimensiones: (2, 4)
 Inicializando BIAS b1 con dimensiones: (1, 4)
@@ -452,9 +458,10 @@ Inicializando BIAS b2 con dimensiones: (1, 8)
 Inicializando PESO W3 con dimensiones: (8, 1)
 Inicializando BIAS b3 con dimensiones: (1, 1)
 ```
+
 ### Entrenamiento del modelo
 
-Ya tenemos todo listo para ejecutar nuestra función `train_model` durante n `epochs` utilizando `mse` como nuestra ***función de pérdida***.
+Ya tenemos todo lista para ejecutarse la función `train_model`, durante n `epochs`, utilizando `mse` como nuestra ***función de pérdida***.
 
 ```python
 errors, params = train_model(X, Y, layer_dims, params, activations_functions, mse, lr, epochs)
@@ -465,7 +472,8 @@ plt.ylabel("MSE")
 plt.savefig("imgs/model.png")
 plt.close()
 ```
-Respuesta esperada:
+
+Retorno:
 ```commandline
 1 error: 0.24757298982437223
 2 error: 0.05393229428625825
@@ -478,11 +486,12 @@ Respuesta esperada:
 9 error: 0.031568468850135964
 10 error: 0.022516339724916422
 ```
-![model.png](2%20Redes%20neuronales%20con%20Python%2Fprimer%20red%2Fimgs%2Fmodel.png)
 
-### Probando el modelo sobre datos nuevos
+![Modelo][i004]  
 
-Finalmente, podemos crear un nuevo dataset de prueba aleatorio que tenga una distribución similar al dataset de entrenamiento y observar como clasifico nuestro modelo al dataset de prueba.
+### Probando el modelo con datos nuevos
+
+Finalmente, podemos crear un nuevo dataset aleatorio de prueba, que tenga una distribución similar al dataset de entrenamiento y observar como reliza la clasificación.
 
 ```python
 data_test = (np.random.rand(1000, 2) * 2) - 1
@@ -493,8 +502,9 @@ plt.title("NN prediction")
 plt.savefig("imgs/prediction.png")
 plt.close()
 ```
-Respuesta esperada:
-![prediction.png](2%20Redes%20neuronales%20con%20Python%2Fprimer%20red%2Fimgs%2Fprediction.png)
+
+Retorno:  
+![Predicción][i005]  
 
 
 ## Listado de referencias externas
@@ -521,5 +531,10 @@ Respuesta esperada:
 
 [i003]: https://i.imgur.com/3XpqFfX.png "Problema de clasificación"
 
+* Modelo  
 
+[i004]: https://i.imgur.com/9nDZObG.png "Modelo"
 
+* Predicción  
+
+[i005]: https://i.imgur.com/OBksWuo.png "Predicción"
