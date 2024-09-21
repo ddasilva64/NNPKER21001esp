@@ -339,7 +339,7 @@ Definición de variables:
 - $Z_{i}$: Parte lineal del proceso de la ***RNA*** np.dot($X$, $W$) + $b$ de la i-ésima capa.
 - $A_{i}$: Función de activación aplicada a $Z$ de la i-ésima capa.
 - $y\_hat$: Predicción final de la ***RNA***, correspondiente a $A$ de la última capa.
-- $d\{variable\}_{i}$: Representa la derivada de cierta variable. Por ejemplo, $dW_{3}$ corresponde a la derivada de los pesos de la capa 3.
+- $d\{variable\}_{i}$: Representa la derivada de cierta variable. Por ejemplo, d$W_{3}$ corresponde a la derivada de los pesos de la capa 3.
 
 Programamos un paso de nuestra función de forward propagation:
 
