@@ -205,7 +205,7 @@ Resultados:
 
 ## Crear una RNA usando NumPy
 
-Vamos a implementar una ***RNA*** desde 0 sin utilizar ningún framework, con ***NumPy***.  
+Vamos a implementar una ***RNA*** desde cero, sin utilizar ningún framework, con ***NumPy***.  
 
 ### Creación de un dataset
 
@@ -258,20 +258,6 @@ Shape de las predicciones de la red: (1000, 1)
 
 Tenemos 1.000 muestras de coordenadas (x,y), por eso las variables de entrada tienen el Shape de (1000, 2), mientras que tenemos un vector de labels Y que solo tienen dos clases (0, 1). Esta es la razón por la que la variable de salida tiene un Shape de (1000, 1).
 
-```python
-# Función de inicialización de parámetros
-def initialize_parameters_deep(layer_dims):
-
-    parameters = {}
-    L = len(layer_dims)
-
-    for l in range(0, L-1):
-        parameters['W' + str(l+1)] = (np.random.rand(layer_dims[l], layer_dims[l+1]) * 2) - 1
-        parameters['b' + str(l+1)] = (np.random.rand(1, layer_dims[l+1]) * 2) - 1
-        
-    return parameters
-```
-
 ### Definición de las funciones de activación
 
 Definimos las funciones Sigmoide y ReLU.
@@ -293,7 +279,7 @@ def relu(x, derivate=False):
         return np.maximum(0, x)
 ```
 
-Utilizaremos la función ***ReLU***, como función de activación para las capas ocultas y la función ***Sigmoide***, como la última función de activación para la capa de clasificación.
+Utilizaremos la función ***ReLU***, como función de activación para las capas ocultas y la función ***Sigmoide***, como la última función de activación para la capa de clasificación. Lo cual, es una configuración muy habitual.
 
 ### Función de pérdida
 
@@ -307,6 +293,7 @@ def mse(y, y_hat, derivate=False):
     else:
         return np.mean((y_hat - y) ** 2)
 ```
+
 ### Función de inicialización de pesos
 
 Cada capa de una ***RNA*** está definida por una serie de pesos (W) y de sesgos (b). Cuando creamos una ***RNA*** debemos empezar definiendo estos valores con un valor por defecto aleatorio. Posteriormente, los procesos de optimización iran mejorando estos pesos y sesgos aleatorios.
@@ -343,7 +330,7 @@ def initialize_parameters_deep(layer_dims: list) -> dict:
 
 ### Forward propagation
 
-Definición, en términos de variables de programación, algunos de los conceptos manejados:
+Definición de variables:
 
 - $X$: Variables de entrada del modelo
 - $Y$: Etiquetas reales de las clases a predecir
@@ -352,7 +339,7 @@ Definición, en términos de variables de programación, algunos de los concepto
 - $Z_{i}$: Parte lineal del proceso de la ***RNA*** np.dot($X$, $W$) + $b$ de la i-ésima capa.
 - $A_{i}$: Función de activación aplicada a $Z$ de la i-ésima capa.
 - $y\_hat$: Predicción final de la ***RNA***, correspondiente a $A$ de la última capa.
-- $d\{variable\}i$: Representa la derivada de cierta variable. Por ejemplo, dW3 corresponde a la derivada de los pesos de la capa 3.
+- $d\{variable\}_{i}$: Representa la derivada de cierta variable. Por ejemplo, $dW_{3}$ corresponde a la derivada de los pesos de la capa 3.
 
 Programamos un paso de nuestra función de forward propagation:
 
@@ -361,12 +348,10 @@ def linear_forward(A, W, b):
     Z = np.dot(A, W) + b
     return Z
 
-
 def linear_activation_forward(A_prev, W, b, activation_function):
     Z = linear_forward(A_prev, W, b)
     A = activation_function(Z)
     return A
-
 
 def forward_step(A0, params, activations_functions, n_layers):
     L = n_layers
@@ -379,12 +364,11 @@ def forward_step(A0, params, activations_functions, n_layers):
 ```
 
 ***Notas***:
-- Por nomenclatura, la primera capa de una red corresponde con la entrada de las varibles a clasificar, a su vez podemos llamar a estos datos como:
-  - A0 en realidad, la función `linear_forward` necesita los pesos y bias de la capa actual y la respuesta de la función de activación de la capa anterior.
-  - Sin embargo, en la capa oculta 1, la respuesta A anterior corresponde con la entrada de datos. Solamente es en este caso.
+- La primera capa de la red corresponde a la entrada de las varibles a clasificar, a su vez, podemos llamar a estos datos como:
+  - La función `linear_forward` necesita los ***pesos*** y ***bias*** (sesgos) del ***layer*** (capa) actual y la respuesta de la ***función de activación*** del ***layer*** (capa) anterior.
+  - En la ***capa oculta*** 1, la respuesta A anterior corresponde con la entrada de datos. Solamente es en este caso.
 
 ## Aplicando backpropagation y descenso del gradiente
-
 
 ### Backpropagation
 
