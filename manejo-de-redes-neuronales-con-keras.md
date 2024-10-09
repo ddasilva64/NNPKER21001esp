@@ -3,7 +3,7 @@
 
 <summary>Índice de contenidos</summary>
 
-* [***Data: train(ing), validation & test***](#data-training-validation--test)
+* [***Datasets: train(ing), validation & test***](#datasets-training-validation--test)
   * [***Training dataset***](#training-dataset)
   * [***Validation dataset***](#validation-dataset)
   * [***Test dataset***](#test-dataset)
@@ -48,57 +48,50 @@
 
 </details>
 
-## Data: train(ing), validation & test  
-
-***[<span style="font-family:Verdana; font-size:0.95em;color:red">Red neuronal</span>][r000]***: Una red neuronal es un programa, o modelo, de ML que toma decisiones de forma similar al cerebro humano, utilizando procesos que imitan la forma en que las neuronas biológicas trabajan juntas para identificar fenómenos, sopesar opciones y llegar a conclusiones.  
-
-![Red neuronal][i000]  
+## Datasets: train(ing), validation & test  
 
 ### Training dataset
 
-**Training Dataset:** Es la muestra de datos utilizados para entrenar al modelo.
+***[<span style="font-family:Verdana; font-size:0.95em;color:red">Training dataset</span>][r000]***: El ***modelo se ajusta inicialmente a un conjunto de datos de entrenamiento***​, que es un conjunto de ejemplos utilizados para ***ajustar los parámetros (pesos y sesgos) del modelo***. El modelo se ejecuta con este conjunto de datos y produce un resultado, que luego se compara con el objetivo, para cada vector de entrada del conjunto de datos. En función del resultado de la comparación y del algoritmo de aprendizaje específico utilizado, se ajustan los parámetros del modelo. El ajuste del modelo puede incluir tanto la selección de variables como la estimación de parámetros.
 
-El dataset actual que utilizados para entrenar el modelo (pesos y sesgos) en el caso de una red neuronal. El modelo observa y aprende de este conjunto de datos.
+El modelo aprende de este dataset.
 
 ### Validation dataset
 
-**Validation Dataset:** Es la muestra de datos utilizada para proveer una evaluación no sesgada de un modelo entrenado en el dataset de entrenamiento mientras ajustados los hiperparámetros. La evaluación se vuelve más sesgada a medida que la habilidad en el conjunto de datos de validación se incorpora a la configuración del modelo.
+***[<span style="font-family:Verdana; font-size:0.95em;color:red">Validation dataset</span>][r001]***: El modelo de entrenamiento ajustado se utiliza para predecir las respuestas de las observaciones en un segundo conjunto de datos denominado conjunto de datos de validación. Este proporciona una ***evaluación no sesgada del ajuste de un modelo en el conjunto de datos de entrenamiento*** mientras ***se ajustan los hiperparámetros del modelo​*** (por ejemplo, el número de unidades ocultas -capas y anchos de capa- en una ***RNA​***). Estos conjuntos de datos pueden utilizarse para la regularización mediante la detención temprana (detener el entrenamiento cuando aumenta el error en el conjunto de datos de validación, ya que es un signo de ***ajuste excesivo*** al conjunto de datos de entrenamiento). Este sencillo procedimiento se complica en la práctica por el hecho de que el error de este conjunto de datos puede fluctuar durante el entrenamiento, produciendo múltiples mínimos locales. Esta complicación ha llevado a la creación de muchas reglas ad hoc para decidir cuándo ha comenzado realmente el ***sobreajuste***.
 
-El conjunto de validación se utiliza para evaluar un modelo dado, pero esto es para una evaluación frecuente. Nosotros, como ingenieros de aprendizaje automático, usamos estos datos para ajustar los hiperparámetros del modelo. Por lo tanto, el modelo ocasionalmente ve estos datos, pero nunca lo "aprende" de esto. Utilizamos los resultados del conjunto de validación y actualizamos hiperparámetros de nivel superior. Entonces, el conjunto de validación afecta a un modelo, pero solo indirectamente. El conjunto de validación también se conoce como conjunto de desarrollo o el conjunto de desarrollo. Esto tiene sentido, ya que este conjunto de datos ayuda durante la etapa de "desarrollo" del modelo.
+Es decir, los conjuntos de datos de validación son utilizados para realizar una ***evaluación no sesgada de un modelo entrenado***, mientras son ajustados los hiperparámetros. La evaluación se vuelve más sesgada a medida que la habilidad en el dataset de validación se incorpora a la configuración del modelo.
+
+El modelo nunca "aprende" del dataset de validación. Utilizamos los resultados de este dataset y ajustamos (actualizamos) hiperparámetros. 
+
+Afecta a un modelo, pero solo indirectamente. El conjunto de validación también se conoce como ***dataset de desarrollo***, ya que se utiliza durante la etapa de "desarrollo" del modelo.
  
 ### Test dataset
 
-**Test Dataset**: la muestra de datos utilizados para proporcionar una evaluación imparcial de un modelo de modelo final en el conjunto de datos de capacitación.
+***[<span style="font-family:Verdana; font-size:0.95em;color:red">Test dataset</span>][r002]***: Es un conjunto de datos utilizado para proporcionar una ***evaluación imparcial del ajuste final de un modelo en el conjunto de datos de entrenamiento***.​ Si los datos del conjunto de datos de prueba nunca se han utilizado en el entrenamiento (por ejemplo, en la ***validación cruzada***), el conjunto de datos de prueba también se denomina ***conjunto de datos retenidos***. El término "conjunto de validación" se utiliza a veces en lugar de "conjunto de prueba" en algunas publicaciones (por ejemplo, si el conjunto de datos original se dividió en sólo dos subconjuntos, el conjunto de prueba podría denominarse conjunto de validación).
 
-El conjunto de datos de prueba proporciona el estándar de oro utilizado para evaluar el modelo. Solo se usa una vez que un modelo está completamente entrenado (usando el tren y los conjuntos de validación). El conjunto de pruebas es generalmente lo que se utiliza para evaluar modelos competidores (por ejemplo, en muchas competiciones de Kaggle, el conjunto de validación se lanza inicialmente junto con el conjunto de capacitación y el conjunto de pruebas real únicamente se lanza cuando la competencia está a punto de cerrar, y es El resultado del modelo en el conjunto de pruebas que decide el ganador).  
+Proporcionan el ***estándar utilizado para evaluar el modelo***. Se usa una vez que un modelo está completamente entrenado (entrenamiento y validación). 
 
-Muchas veces el conjunto de validación se usa como conjunto de pruebas, pero no es una buena práctica. El conjunto de pruebas generalmente está bien curado. Contiene datos cuidadosamente muestreados que abarcaron las diversas clases que enfrentaría el modelo, cuando se utiliza en el mundo real.
+Generalmente se utiliza para evaluar modelos que compiten. Por ejemplo, en muchas competiciones de Kaggle, el dataset de validación se lanza inicialmente, junto con el dataset de entrenamiento. El dataset de pruebas (real), únicamente se lanza cuando la competención está a punto de cerrar, y es este el que decide el ganador.  
 
-![datatest.gif](3%20Manejo%20de%20redes%20neuronales%20con%20Keras%2Fimgs%2Fdatatest.gif)
+***Muchas veces el dataset de validación se usa como dataset de pruebas, pero no es una buena práctica***. ***Debe contener datos cuidadosamente muestreados***, que abarquen las diversas clases que enfrentará el modelo, cuando se utilice en el mundo real.
+
+![Test dataset][i000]  
 
 ## Resolviendo un problema de clasificacion binaria
 
-En las siguientes clases estaremos resolviendo un problema de clasificación binaria. Para ello vamos a utilizar el dataset [IMDB movie review sentiment classification](https://keras.io/api/datasets/imdb/). El cual es un dataset que contiene una muestra de 25,000 reseñas de películas de IMDB etiquetadas por sentimiento (positivo/negativo). Adicionalmente, este dataset contiene 10,000 de las palabras más usadas en cada una de las reseñas, estas palabras están guardadas en un catálogo que asigna un índice a cada una de las palabras más empleadas.
+Para resolver un problema de clasificacion binaria vamos a utilizar el dataset [IMDB movie review sentiment classification](https://keras.io/api/datasets/imdb/), el cual contiene una muestra de 25.000 reseñas de películas de IMDB etiquetadas por sentimiento (positivo/negativo). Adicionalmente, contiene 10.000 de las palabras más usadas en cada una de las reseñas. Estas palabras están guardadas en un catálogo que asigna un índice a cada una de las palabras más empleadas.
 
-El objetivo de esta práctica es utilizar nuestros conocimientos de normalizado de datos para preparar a este dataset para ser clasificado por una red neuronal que pueda predecir el sentimiento de una nueva reseña. Los puntos a seguir serán los siguientes:
+El objetivo de esta práctica es utilizar nuestros conocimientos de normalización de datos, para preparar este dataset para ser clasificado por una ***RNA*** que pueda predecir el sentimiento de una nueva reseña.  
 
-1. Obtención de datos imdb - Keras
-2. Normalizando datos
-3. Arquitectura del Modelo
-4. Entrenando el modelo
-5. Analizando resultados
-6. Arquitectura del modelo normalizado
-
-***Nota***: El código completo de este proyecto lo puedes encontrar [aquí](3%20Manejo%20de%20redes%20neuronales%20con%20Keras/clasificacion%20binaria/main.py)
-
-### Obtención de datos IMDB - Keras
-
-Utilizando `keras.datasets` vamos a importar `imdb` y a cargar el dataset con su método `load_data`  
+### Obtención de datos IMDB - Keras 
 
 ```python
+# Carga del dataset
 from keras.datasets import imdb
 (train_data, train_labels), (test_data, test_labels) = imdb.load_data(num_words=10000)
-# ¿Cómo luce uno de los datos de entrenamiento?
+
+# Aspecto de uno de los datos de entrenamiento
 print("Train data example")
 print(train_data[0])
 print("Train label example")
@@ -113,9 +106,7 @@ Train label example
 1
 ```
 
-Sin embargo, nos gustaría ver, por fines didácticos, cuál es el verdadero texto que tiene una muestra del dataset de entrenamiento.
-
-Para ello nos apoyaremos de la función `get_word_index()` el cual nos regresara el catalogo de las palabras utilizadas con su respectivo índice, después convertiremos este `word_index` en un diccionario, para de esta forma acceder de forma sencilla a las palabras del `word_index` de acuerdo al índice de la palabra.  
+Sin embargo, nos gustaría ver, con fines didácticos, cuál es el verdadero texto que tiene una muestra del dataset de entrenamiento. Para ello nos apoyaremos de la función `get_word_index()`, la cual, nos retornará el catalogo de las palabras utilizadas con su respectivo índice, después convertiremos este `word_index` en un diccionario. Así, acceederemos, de forma sencilla a las palabras del `word_index` de acuerdo al índice de la palabra.  
 
 ```python
 def convert_number_to_word(example):
@@ -123,7 +114,7 @@ def convert_number_to_word(example):
     word_index = dict([(value, key) for (key, value) in word_index.items()])
     print(" ".join([str(word_index.get(_ - 3)) for _ in example]))
 
-# Observemos entonces cómo luce realmente un texto de entrada
+# Aspecto real de un texto de entrada
 convert_number_to_word(train_data[0])
 ```
 
@@ -132,47 +123,52 @@ Respuesta:
 None this film was just brilliant casting location scenery story direction everyone's really suited the part they played and you could just imagine being there robert None is an amazing actor and now the same being director None father came from the same scottish island as myself so i loved the fact there was a real connection with this film the witty remarks throughout the film were great it was just brilliant so much that i bought the film as soon as it was released for None and would recommend it to everyone to watch and the fly fishing was amazing really cried at the end it was so sad and you know what they say if you cry at a film it must have been good and this definitely was also None to the two little boy's that played the None of norman and paul they were just brilliant children are often left out of the None list i think because the stars that play them all grown up are such a big profile for the whole film but these children are amazing and should be praised for what they have done don't you think the whole story was so lovely because it was true and was someone's life after all that was shared with us all
 ```
 
-### Normalizado de datos
+### Normalización de datos
 
-Antes de continuar con este punto, veamos un poco de contexto del porqué las palabras del dataset han sido guardadas como índices en lugar de utilizar las palabras directamente.
+***[<span style="font-family:Verdana; font-size:0.95em;color:red">Normalización de datos</span>][r003]***: El objetivo de la normalización es ***cambiar los valores de las columnas numéricas del conjunto de datos para usar una escala común, sin distorsionar las diferencias en los intervalos de valores ni perder información***. La normalización también es necesaria para que algunos algoritmos modelen los datos correctamente.
 
-En general en cualquier problema de machine learning/deep learning, nos topamos con que los datos que vamos a utilizar para entrenar a nuestro modelo de inteligencia artificial pueden ser de dos clases:
+Por ejemplo, supongamos que el conjunto de datos de entrada contiene una columna con valores comprendidos entre 0 y 1, y otra columna con valores comprendidos entre 10.000 y 100.000. La enorme diferencia en el escala de los números podría generar problemas al intentar combinar los valores como características durante el modelado.
+
+La normalización evita estos problemas mediante la ***creación de nuevos valores que mantienen la distribución general y las relaciones en los datos de origen***, a la vez que se ***conservan los valores dentro de una escala*** que ***se aplica en todas las columnas numéricas que se usan en el modelo***.
+
+En nuestro ejemplo, las palabras del dataset han sido guardadas como índices en lugar de utilizar las palabras directamente, porque, en general, en cualquier problema de ***ML/DL***, tenemos que los datos que vamos a utilizar para entrenar a nuestro modelo de IA pueden ser:
 
 - ***Estructurados***: Datos que tengan forma de fila - columna (similar a una tabla de excel)
 - ***No estructurados***: Datos que explícitamente NO tengan una forma de fila - columna, cómo lo son: El audio, las imágenes o el texto.
 
 A su vez, los datasets ***estructurados*** cuentan con dos tipos principales de variables: **Cualitativas y Cuantitativas**.
 
-![tipos_de_variable.png](3%20Manejo%20de%20redes%20neuronales%20con%20Keras%2Fimgs%2Ftipos_de_variable.png)
-
+![Tipos de variables][i001]  
 
 #### Variables cualitativas
 
-  - Explicación: Este tipo de variables representan características o cualidades de un objeto y no pueden ser medidas de forma numerica.
-  - Tipos de variables cualitativas:
-    - Ordinal: A pesar de NO tener un valor asignado, sí posee un orden conocido. Por ejemplo: Muy frio, frio, templado, caliente, muy caliente.
-    - Nominal: No poseen un valor asignado y tampoco cuentan con un orden conocido. Por ejemplo tipos de colores: Rojo, Azul, Verde.
+Este tipo de variables representan características o cualidades de un objeto y no pueden ser medidas de forma numerica.
+
+Tipos:
+- ***Ordinal***: A pesar de NO tener un valor asignado, sí posee un orden conocido (por ejemplo, muy frio, frio, templado, caliente, muy caliente).
+- ***Nominal***: No poseen un valor asignado y tampoco cuentan con un orden conocido (por ejemplo, rojo, azul, verde).
 
 #### Variables cuantitativas
 
-  - Explicación: Este tipo de variables representan cantidades numéricas, lo cual les permite utilizar operaciones aritméticas.
-  - Tipos de variables cuantitativas:
-    - Discreta: Se puede contar con números enteros. Por ejemplo: Años de vida, número de hijos en una familia etc.
-    - Continúa: Se debe expresar con números decimales. Por ejemplo: Peso de una persona puede ser 64.512 Kg o 72.018 Kg etc.
+Representan cantidades numéricas, lo cual les permite utilizar operaciones aritméticas.  
 
-Tomando en cuenta lo dicho anteriormente, podemos observar que la propia naturaleza de las redes neuronales, incentiva el uso de variables cuantitativas continuas como tipo de variable predilecta para ser utilizada por el modelo. Sin embargo, ya sabemos que el texto es un tipo de dato `No estructurado` y esto NO le gusta a los modelos de deep learning, tendríamos entonces que primero usar algún mecanismo que nos permita estructurar a este tipo de dato y de forma preferible llevarlo a una variable cuantitativa continua. 
+Tipos:
+- ***Discreta***: Se puede contar con números enteros (por ejemplo, años de vida, número de hijos en una familia, etc.)
+- ***Continúa***: Se debe expresar con números decimales (por ejemplo, el peso de una persona puede ser 64,512 Kg o 72,018 Kg etc.)
 
-El texto puede ser pensado de cierta manera como una variable ***cualitativa nominal*** en donde cada una de las palabras que existen puede ser en sí misma una variable nominal. Tomando este primer pensamiento como base, entonces es fácil de observar que una forma de convertir variables ***nominales*** a ***discretas*** es creando un catálogo de índices, que logre mapear cada valor nominal a un número discreto. ***[gato, azul, coche]*** Se puede convertir en ***[1, 2, 3]*** dado un diccionario de índices - palabras como el siguiente:
+Teniendo en cuenta lo anterior, podemos observar que la propia naturaleza de las ***RNA***, incentiva el uso de variables cuantitativas continuas para ser utilizadas por el modelo. Sin embargo, ya sabemos que el texto es un tipo de dato `No estructurado` y esto NO le gusta a los modelos ***DL***, entonces tendríamos, primero que usar algún mecanismo que nos permita estructurar este tipo de dato y de forma preferible llevarlo a una variable cuantitativa continua. 
+
+El texto puede ser tratado como una variable ***cualitativa nominal***. Entonces es fácil ver que una forma de convertir variables ***nominales*** a ***discretas*** es creando un catálogo de índices, que logre mapear cada valor nominal a un número discreto. ***[gato, azul, coche]*** se puede convertir en ***[1, 2, 3]*** dado un diccionario de índices-palabras como el siguiente:
 
 `{1: "gato", 2: "azul", 3: "coche"}`
 
-A este tipo de conversión entre variables nominales y discretas se le conoce como: ***label encoding*** puedes leer más de esta técnica en -> [sklearn.preprocessing.LabelEncoder](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html)
+A este tipo de conversión entre variables nominales y discretas se le conoce como: ***label encoding***. [Acceder aquí para saber más de label encoding](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html)
 
-Sin embargo, pese a que esta técnica es sumamente fácil de implementar y es bastante eficiente en terminos de tiempo y memoria, tiene una gran desventaja muy clara. Este tipo de transformaciones podría hacernos pensar que un ***coche*** es equivalente a tres ***gatos*** numéricamente es cierto, pero sabemos que esa analogía no tiene ningún sentido. 
+Sin embargo, pese a que esta técnica es muy fácil de implementar y es bastante eficiente en terminos de tiempo y memoria, tiene una gran desventaja y es que este tipo de transformaciones podría hacernos pensar que un ***coche*** es equivalente a tres ***gatos*** y numéricamente es cierto, pero sabemos que esa analogía no tiene ningún sentido. 
 
-Una alternativa al ***Label Encoding*** es el método llamado `One Hot Encoding`. La estrategia que implementa es crear una columna para cada valor distinto que exista en la característica que estamos codificando y, para cada registro, marcar con un 1 la columna a la que pertenezca dicho registro y dejar las demás con 0. En el ejemplo visto en la sección anterior en el que codificábamos el sexo de los pasajeros, `One Hot Encoding generaría dos columnas (una para el valor "male" y otra para el valor "female") y, para cada pasajero, asignaría un 1 a la columna de "male" y un 0 a la de "female" en el caso de ser un hombre, y viceversa en el caso de ser mujer (un 0 en la columna de "male" y un 1 en la de "female").
+Una alternativa al ***Label Encoding*** es el método llamado ***One Hot Encoding***. En esta estrategia se crea una columna para cada valor distinto que exista en la característica que estamos codificando y, para cada registro, se marca con un 1 la columna a la que pertenezca dicho registro y se deja las demás con 0. En el ejemplo visto en la sección anterior en el que codificábamos el sexo de los pasajeros, ***One Hot Encoding*** generaría dos columnas (una para el valor "male" y otra para el valor "female") y, para cada pasajero, asignaría un 1 a la columna de "male" y un 0 a la de "female" en el caso de ser un hombre, y viceversa en el caso de ser mujer.
 
-En nuestro ejemplo anterior entonces las variables nominales de: `[gato, azul, coche]` en lugar de ser representadas utilizando ***Label enconding*** como `{1: "gato", 2: "azul", 3: "coche"}` podrían tener la siguiente reprsentación de ***One Hot Encoding***
+En el ejemplo anterior las variables nominales de: `[gato, azul, coche]` en lugar de ser representadas utilizando ***Label enconding*** como `{1: "gato", 2: "azul", 3: "coche"}` podrían tener la siguiente reprsentación de ***One Hot Encoding***
 
 ```
 gato =  [1, 0, 0]
@@ -180,11 +176,11 @@ azul =  [0, 1, 0]
 coche = [0, 0, 1]
 ```
 
-Esta es una mejor aproximación, puesto que entonces un coche tiene el mismo peso que un gato. Y todas las palabras tienen la misma distancia entre ellas. Sin embargo, esta NO es la representación definitiva para la conversión de Texto a un tipo de dato estructurado. Un ejemplo sencillo es que en el lenguaje existe un concepto llamado semántica que nos permite darnos cuenta que:
+Esta es una mejor aproximación, puesto que entonces un coche tiene el mismo peso que un gato. Y todas las palabras tienen la misma distancia entre ellas. Sin embargo, esta NO es la representación definitiva para la conversión de texto a un tipo de dato estructurado. Un ejemplo sencillo es que en el lenguaje existe un concepto llamado semántica que nos permite darnos cuenta que:
 
-Entre las palabras ***cuchillo*** y ***tenedor*** hay menos distancia que entre ***cuchillo*** y ***ornitorrico***. Esta explicación será utilizada en un próximo curso de deep learning, pero es la introducción al tema de word embeddings. Pero por ahora con el conocimiento que he explicado podemos continuar con la explicación de este tema.
+Entre las palabras ***cuchillo*** y ***tenedor*** hay menos distancia que entre ***cuchillo*** y ***ornitorrico***. Esta explicación es la introducción al tema de word embeddings.  
 
-Ahora que ya tenemos un conocimiento sobre qué es ***Label Encoding*** y ***One Hot Encoding*** podemos proceder a transformar la representación de ***Label Encoding*** que utilizo el dataset de IMDB por una versión en ***One Hot Encoding*** la cuál es una mejor representación puesto que tiene la forma de un ***tensor*** que es ideal para deep learning. Revisar apuntes de tipos de datos de deep learning [Dimensiones y tensores](#21-dimensiones-tensores-y-reshape).
+Ahora que ya tenemos un conocimiento sobre qué es ***Label Encoding*** y ***One Hot Encoding*** podemos proceder a transformar la representación de ***Label Encoding*** que utilizo el dataset de IMDB por una versión en ***One Hot Encoding***, la cuál es una mejor representación, puesto que tiene la forma de un ***tensor*** que es ideal para ***DL***.  
 
 ```python
 
@@ -194,7 +190,7 @@ def one_hot_encoding(sequences, dim=10000):
         results[i, sequences] = 1
     return results
 
-# Covertirmos la representacion de label encoding por one hot encoding para nuestros parámetros de entrada
+# Covertirmos la representacion de label encoding a one hot encoding para nuestros parámetros de entrada
 x_train = one_hot_encoding(train_data)
 x_test = one_hot_encoding(test_data)
 
@@ -206,7 +202,8 @@ print(train_data.shape)
 print(x_train.shape)
 print(x_train[0], x_train[0].shape)
 ```
-Valor:
+
+Resultado:
 ```commandline
 (25000,)
 (25000, 10000)
@@ -215,9 +212,9 @@ Valor:
 
 ### Arquitectura del modelo
 
-Para esta arquitectura veremos un modelo de 2 capa ocultas de 16 neuronas con función de activación `relu`. Nuestra capa de clasificación solo tendrá 1 neurona, puesto que es suficiente para un problema de clasificación binaria y tendrá una función de activación ***Sigmoide***
+Para esta arquitectura tenemos un modelo de 2 capas ocultas, cada una con 16 neuronas y con ***función de activación*** ***ReLU***. Nuestra capa de clasificación solo tendrá 1 neurona, puesto que es suficiente para un problema de clasificación binaria y tendrá una ***función de activación*** ***Sigmoide***.  
 
-Finalmente, el modelo será compilado con el optimizador `rmsprop` y como función de perdida usaremos `binary_crossentropy` la cual funciona muy bien para problemas de clasificación binaria, y como medida de desempeño usaremos `accuracy`
+Finalmente, el modelo será compilado con el optimizador `rmsprop` y como ***función de perdida*** usaremos `binary_crossentropy`, la cual funciona muy bien para problemas de clasificación binaria, y como medida de desempeño usaremos `accuracy`
 
 ```python
 def architecture(model: models.Sequential, input_shape) -> models.Sequential:
@@ -236,7 +233,7 @@ model.compile(optimizer="rmsprop", loss="binary_crossentropy", metrics=["acc"])
 
 ### Entrenando el modelo
 
-Entrenaremos el modelo por 50 épocas, con un batch size de 512 y finalmente, usaremos un 30% de los datos de entrenamiento como datos de validación. Esto nos permitirá observar si el modelo tiene o no overfitting.
+Entrenaremos el modelo durante 50 épocas, con un batch size de 512 y finalmente, usaremos un 30% de los datos de entrenamiento, como datos de validación. Esto nos permitirá observar si el modelo tiene o no ***overfitting***.
 
 ```python
 history = model.fit(x_train, y_train, epochs=50, batch_size=512, validation_split=0.3)
@@ -244,47 +241,50 @@ history = model.fit(x_train, y_train, epochs=50, batch_size=512, validation_spli
 
 ### Analizando resultados
 
-Veamos cuales son los resultados de nuestro modelo base:
 
 ```python
 results = model.evaluate(x_test, y_test)
 print(results)
+
 history_dict = history.history
 loss_values = history_dict['loss']
 val_loss_values = history_dict['val_loss']
+
 fig = plt.figure(figsize=(10, 10))
 epoch = range(1, len(loss_values) + 1)
+
 plt.plot(epoch, loss_values, 'o-r', label='training')
 plt.plot(epoch, val_loss_values, '--', label='validation')
 plt.title("Error in training and validation datasets")
 plt.xlabel("epochs")
 plt.ylabel("Binary Cross Entropy")
 plt.legend()
-plt.savefig("imgs/errores.png")
-plt.close()
 ```
-Respuesta:
+
+Resultado:
 ```commandline
 782/782 [==============================] - 1s 1ms/step - loss: 1.2614 - acc: 0.8542
 ```
 
-![errores.png](3%20Manejo%20de%20redes%20neuronales%20con%20Keras%2Fclasificacion%20binaria%2Fimgs%2Ferrores.png)
+![Errores][i002]  
 
 ## Regularización - Dropout
 
-Antes de continuar con la parte final de este mini proyecto de ejemplo, es necesario explicar el concepto de ***overfitting*** y con ello conocer diferentes técnicas de ***regularización***:
+El ***overfitting*** (sobre ajuste), sucede cuando el modelo no es capaz de generalizar el conocimiento adquirido en la etapa de ***trainig***, es decir, no aprende (recuerda).  
 
-El ***overfitting*** o sobre ajuste es cuando nuestro modelo no es capaz de generalizar el conocimiento adquirido en la etapa de ***trainig***. Es fácil de observar este problema, cuando comparamos las funciones de coste a lo largo de las épocas entre el dataset de ***trainig*** y ***validation***. En nuestro problema de clasificación binaria de reseñas de IMDB. La curva roja representa el error en el dataset de entrenamiento, pero a pesar de que a lo largo de 10 épocas podemos observar como de poco en poco este error fue disminuyendo, esto no fue el mismo caso para el error en el conjunto de ***validation*** aproximadamente, después de la época 4 el error en el dataset de ***validation*** empezó a subir, marcando una pauta para detectar el ***overfitting***.
+Este problema se observa, cuando comparamos las ***funciones de coste*** a lo largo de las épocas, entre el ***trainig dataset*** y el ***validation dataset***.  
 
-Ahora listemos algunas de las principales técnicas con las que contamos en deep learning para reducir el problema del overfitting.
+En nuestro problema de clasificación binaria (de reseñas de IMDB), en el gráfico anterior, la curva roja representa el error en el ***trainig dataset*** y la azul el error en el ***validation dataset*** y la azul. A lo largo de las primeras 10 épocas observamos como, poco a poco, el error va disminuyendo en el ***trainig dataset***, pero sucede lo contrario en el ***validation dataset***. Aproximadamente, después de la época 4, el error en el ***validation dataset*** empieza a subir. Es decir, detectamos que hay ***overfitting***.
+
+En ***DL*** contamos con una serie de técnicas, para reducir el ***overfitting***, las describimos a continuación.
 
 ### Regularización L2 (Ridge)
 
-La idea detrás de este tipo de regularización es reducir el valor de los parámetros para que sean pequeños.
+Reduce el valor de los parámetros para que sean pequeños.
 
-Esta técnica introduce un término adicional de penalización en la función de coste original (L), añadiendo a su valor la suma de los cuadrados de los parámetros (ω).
+Esta técnica introduce un término adicional de penalización en la función de ***coste original*** (L), añadiendo a su valor la ***suma de los cuadrados*** de los parámetros (ω).
 
-La mala noticia es que este nuevo término puede ser alto; tanto que la red minimizaría la función de coste haciendo los parámetros muy cercanos a 0, lo que no sería nada conveniente. Es por ello que multiplicaremos ese sumando por una constante (λ) pequeña, cuyo valor escogeremos de forma arbitraria (0.1, 0.01, …).
+Pero este nuevo término puede ser alto; tanto que la red minimizaría la ***función de coste*** haciendo los parámetros muy cercanos a 0, lo que no sería nada conveniente. Es por ello que multiplicaremos ese sumando por una constante (λ) pequeña, cuyo valor escogeremos de forma arbitraria (0.1, 0.01, …).
 
 La función de coste queda, por tanto, así:
 
@@ -863,12 +863,38 @@ Hemos conseguido un error de menos de 1000 dólares en la predicción del precio
 
 ## Listado de referencias externas
 
-* Red neuronal (Wikipedia)  
+* Training dataset (Wikipedia)  
 
-[r000]: https://es.wikipedia.org/wiki/Red_neuronal_artificial "referencia a red neuronal en Wikipedia"
+[r000]: https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets#Training_data_set "referencia a training dataset en Wikipedia"
+
+* Validation dataset (Wikipedia)  
+
+[r001]: https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets#Validation_data_set "referencia a validation dataset en Wikipedia"
+
+* Test dataset (Wikipedia)  
+
+[r002]: https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets#Test_data_set "referencia a test dataset en Wikipedia"
+
+* Normalización de datos (Microsoft learn)  
+
+[r003]: https://learn.microsoft.com/es-es/azure/machine-learning/component-reference/normalize-data?view=azureml-api-2 "referencia a normalización de datos en Microsoft learn"
 
 ## Listado de imágenes
 
-* Red neuronal  
+* Test dataset
 
-[i000]: https://i.imgur.com/SszQ8rp.jpg "Red neuronal"
+[i000]: img/NNPKER032.gif "Test dataset"
+
+* Tipos de variables
+
+[i001]: https://i.imgur.com/I5mxbw3.png "Tipos de variables"
+
+* Errores
+
+[i002]: https://i.imgur.com/AqUQVz7.png "Errores"
+
+* Errores
+
+[i003]: https://i.imgur.com/AqUQVz7.png "Errores"
+
+

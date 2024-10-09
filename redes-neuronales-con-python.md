@@ -298,7 +298,7 @@ def mse(y, y_hat, derivate=False):
 
 Cada capa de una ***RNA*** está definida por una serie de pesos (W) y de sesgos (b). Cuando creamos una ***RNA*** debemos empezar definiendo estos valores con un valor por defecto aleatorio. Posteriormente, los procesos de optimización iran mejorando estos pesos y sesgos aleatorios.
 
-***Nota***: Todo el código, de aquí en adelante, está optimizado para trabajar con n layers. De forma automática, el ***forward*** y el ***backward propagation*** se adaptan a la cantidad de layers.
+***Nota***: Todo el código, de aquí en adelante, está optimizado para trabajar con n layers (capas). De forma automática, el ***forward propagation*** y el ***backward propagation*** se adaptan a la cantidad de capas.
 
 ```python
 def initialize_parameters_deep(layer_dims: list) -> dict:
@@ -314,14 +314,14 @@ def initialize_parameters_deep(layer_dims: list) -> dict:
         """
         Multiplicar por 2 y restar 1 es una forma de normalizar los datos para que vayan 
         de -1 a 1, de esta forma encajan mejor con la distribución de datos de entrada 
-        de nuestro problema, pero tampoco es indispensable
+        de nuestro problema, pero no es indispensable
         """
         parameters[f'W{l + 1}'] = (np.random.rand(layer_dims[l], layer_dims[l + 1]) * 2) - 1  
 
         parameters[f'b{l + 1}'] = (np.random.rand(1, layer_dims[l + 1]) * 2) - 1
         
-        print(f"Inicializando PESO W{l + 1} con dimensiones:", parameters[f'W{l + 1}'].sahpe)
-        print(f"Inicializando BIAS b{l + 1} con dimensiones:", parameters[f'b{l + 1}'].sahpe)
+        print(f"Inicializando PESO W{l + 1} con dimensiones:", parameters[f'W{l + 1}'].shape)
+        print(f"Inicializando BIAS b{l + 1} con dimensiones:", parameters[f'b{l + 1}'].shape)
 
     return parameters
 ```
@@ -341,7 +341,7 @@ Definición de variables:
 - $y\_hat$: Predicción final de la ***RNA***, correspondiente a $A$ de la última capa.
 - $d(variable)_{i}$: Representa la derivada de cierta variable. Por ejemplo, $dW_{3}$ corresponde a la derivada de los pesos de la capa 3.
 
-Programamos un paso de nuestra función de forward propagation:
+Programamos la función de forward propagation:
 
 ```python
 def linear_forward(A, W, b):
@@ -372,7 +372,7 @@ def forward_step(A0, params, activations_functions, n_layers):
 
 ### Backpropagation
 
-En el proceso de ***backpropagation*** el primer paso es obtener el error entre el valor real Y y el valor predicho por la red y_hat. Una vez que se calculan las derivadas de Z y W de la última capa, entonces podemos ir para atrás calculando las otras dZ y dW para las capas anteriores.
+En el proceso de ***backpropagation*** el primer paso es obtener el error entre el valor real Y y el valor predicho por la red y_hat. Una vez que se calculan las derivadas de $Z$ y $W$ de la última capa, entonces podemos ir para atrás calculando las otras $dZ$ y $dW$ para las capas anteriores.
 
 ```python
 def backpropagation(Y, y_hat, params, activations_functions, error_function, n_layers):
@@ -409,7 +409,7 @@ def gradient_descent(params, lr, n_layers):
 
 ### Train model function
 
-Ahora, con todas las funciones que hemos definido anteriormente, podemos crear una nueva función que sirva como gestora de funciones y que permita poner, de forma secuencial, todos los pasos del entrenamiento de la red, para una cantidad de iteraciones definidas (`epochs`):
+Ahora, con todas las funciones definidas anteriormente, podemos crear una nueva función que sirva como gestora de funciones y que permita ejecutar, de forma secuencial, todos los pasos del entrenamiento de la red, para n iteraciones (`epochs`):
 
 ```python
 def train_model(X, Y, layer_dims, params, activations_functions, error_function, lr, epochs):
@@ -433,7 +433,7 @@ def train_model(X, Y, layer_dims, params, activations_functions, error_function,
 
 ### Definir arquitectura de la RNA
 
-En este punto, definimos todas las variables que definen la arquitectura de la red como: 
+En este punto, debemos definir todas las variables que definen la arquitectura de la ***RNA*** como: 
 - El número de capas  
 - El número de neuronas por capa  
 - El learning rate  
@@ -461,12 +461,12 @@ Inicializando BIAS b3 con dimensiones: (1, 1)
 
 ### Entrenamiento del modelo
 
-Ya tenemos todo lista para ejecutarse la función `train_model`, durante n `epochs`, utilizando `mse` como nuestra ***función de pérdida***.
+Ya tenemos todo lista para ejecutarse la función `train_model`, durante n `epochs`, utilizando `mse` como  ***función de pérdida***.
 
 ```python
 errors, params = train_model(X, Y, layer_dims, params, activations_functions, mse, lr, epochs)
 plt.plot(errors)
-plt.title("MSE over epochs")
+plt.title("MSE sobre epochs")
 plt.xlabel("epochs")
 plt.ylabel("MSE")
 plt.savefig("imgs/model.png")
@@ -475,16 +475,17 @@ plt.close()
 
 Retorno:
 ```commandline
-1 error: 0.24757298982437223
-2 error: 0.05393229428625825
-3 error: 0.059482476810252996
-4 error: 0.05376995780762481
-5 error: 0.045345930433615116
-6 error: 0.03746680657241106
-7 error: 0.03602928839608933
-8 error: 0.03626453751967989
-9 error: 0.031568468850135964
-10 error: 0.022516339724916422
+1 error: 0.26054283417686447
+2 error: 0.19861368548000097
+3 error: 0.1666437071004471
+4 error: 0.15569880028738037
+5 error: 0.15869903611655775
+6 error: 0.1601175075115958
+7 error: 0.1499255956418734
+8 error: 0.14916264230761295
+9 error: 0.15679814553236507
+10 error: 0.14804915008356084
+Text(0, 0.5, 'MSE')
 ```
 
 ![Modelo][i004]  
@@ -498,14 +499,11 @@ data_test = (np.random.rand(1000, 2) * 2) - 1
 prediction = forward_step(data_test, params, activations_functions, 3)
 y = np.where(prediction >= 0.5, 1, 0)
 plt.scatter(data_test[:, 0], data_test[:, 1], c=y[:, 0], s=40)
-plt.title("NN prediction")
-plt.savefig("imgs/prediction.png")
-plt.close()
+plt.title("Predicción NN")
 ```
 
 Retorno:  
 ![Predicción][i005]  
-
 
 ## Listado de referencias externas
 
